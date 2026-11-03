@@ -17,14 +17,14 @@ One expectation failed and stayed failed: native message serialization drops `to
 
 ## Reproduce
 
-From the repository root:
+The fixtures are public in [agent-claims](https://github.com/maxmorrish/agent-claims) (folder `20261021-local-protocol`, 37 claims, 130 expectations). With `uv` installed:
 
 ```sh
-sh grinder/20261021-discovery/setup.sh
-sh grinder/20261021-discovery/verify.sh
+git clone https://github.com/maxmorrish/agent-claims && cd agent-claims
+python3 scripts/rerun.py --bundle 20261021-local-protocol--evidence --output results/local.jsonl
 ```
 
-Dependencies are pinned in `grinder/20261021-discovery/requirements.txt`. The fixture files are not published with this note yet.
+The runner installs the pinned dependencies in a fresh temporary directory and compares each result with the recorded one.
 
 ## Not verified
 

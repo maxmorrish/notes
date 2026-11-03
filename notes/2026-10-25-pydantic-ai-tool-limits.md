@@ -22,13 +22,7 @@ The practical point: a successful-call limit does not cap failed attempts. If a 
 
 ## Reproduce
 
-From the fixture folder:
-
-```sh
-sh setup.sh && sh verify.sh
-```
-
-Dependencies are pinned in `requirements.lock`. The fixture files are not published with this note yet.
+The fixture for this note is not public yet. It will be added to [agent-claims](https://github.com/maxmorrish/agent-claims) with a rerun command, and this section will link to it.
 
 ## Not verified
 

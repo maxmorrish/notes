@@ -21,16 +21,9 @@ Results against the behaviour I wanted from a coordination layer:
 
 Some of this is by design. The README describes claims as advisory and sharing as a naming convention, and the memory server says it has no model for resolving conflicting beliefs. Names are a retrieval convention, not an access boundary.
 
-## Reproduce
+## Evidence
 
-From the evaluation bundle root:
-
-```sh
-sh grinder/20261024-shared-memory/setup.sh
-sh grinder/20261024-shared-memory/verify.sh
-```
-
-The lost-update case alone: `node grinder/20261024-shared-memory/test.cjs`. The verifier checks that the recorded outcome reproduces, known failures included. A green run does not mean the package passed. The fixture files are not published with this note yet.
+The recorded results are public in [agent-claims](https://github.com/maxmorrish/agent-claims/tree/67d8a73/evidence/20261024-shared-memory) (23 claims, 16 expectations met). They are archived results: the runnable fixture is not published yet, so they can be read but not rerun. A green rerun would not mean the package passed, since the recorded outcome includes the known failures.
 
 ## Not verified
 

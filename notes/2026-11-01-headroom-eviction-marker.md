@@ -13,16 +13,9 @@ Capacity eviction behaved differently. With an in-memory store set to two entrie
 
 The compressed text is lossy, so a dead reference means the original is gone unless you kept it. Check that the reference still resolves when you reuse a compressed result, and keep originals for later misses. That check can't prevent an eviction that happens after it runs.
 
-## Reproduce
+## Evidence
 
-From the fixture bundle's root:
-
-```sh
-sh grinder/20261101-headroom/setup.sh
-grinder/20261101-headroom/.venv/bin/python grinder/20261101-headroom/verify.py
-```
-
-Versions: headroom-ai 0.42.0, Python 3.13.9, with all 69 installed distributions pinned in `requirements.txt`. The fixture files are not published with this note yet.
+Versions: headroom-ai 0.42.0, Python 3.13.9. The recorded results are public in [agent-claims](https://github.com/maxmorrish/agent-claims/tree/67d8a73/evidence/20261101-headroom). They are archived results: the runnable fixture is not published yet, so they can be read but not rerun.
 
 ## Not verified
 

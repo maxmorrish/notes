@@ -17,16 +17,9 @@ A stricter gate over the reports closes that gap. It requires a reviewed invento
 
 A separate six-check test found a provenance limit. Fixture code that Git ignores, sitting beneath a repository, gets the enclosing HEAD and `git_dirty=false`, even after that code changes. The content digest does change. Treat the digest and the package pin as the identity evidence, since the enclosing Git metadata does not pin the files that ran.
 
-## Reproduce
+## Evidence
 
-From the fixture bundle's root:
-
-```sh
-python3 grinder/20261029-groundtruth/setup.py
-python3 grinder/20261029-discovery/verify.py --only groundtruth
-```
-
-Versions: MCP-groundtruth 0.3.0, MCP Python SDK 2.3.0, CPython 3.13.9. The fixture files are not published with this note yet.
+Versions: MCP-groundtruth 0.3.0, MCP Python SDK 2.3.0, CPython 3.13.9. The recorded results are public in [agent-claims](https://github.com/maxmorrish/agent-claims/tree/67d8a73/evidence/20261029-groundtruth). They are archived results: the runnable fixture is not published yet, so they can be read but not rerun.
 
 ## Not verified
 

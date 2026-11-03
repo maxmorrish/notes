@@ -1,11 +1,11 @@
 # Notes
 
-Short write-ups of things I tested in AI tooling, each with the command to reproduce it. Most take ten minutes to
-read and say plainly what held and what did not.
+Short write-ups of things I tested in AI tooling. Each says where its evidence is, with a rerun command where
+the fixture is public. They say plainly what held and what did not.
 
-- 2026-11-01 · [Sticky fallback preparation is not one-to-one with model calls](notes/2026-11-01-pydantic-ai-fallback-prepare.md): ---
-- 2026-11-01 · [A green conformance run can contain a real violation](notes/2026-11-01-mcp-groundtruth-green-run.md): ---
-- 2026-11-01 · [A compression cache can outlive its recovery data](notes/2026-11-01-headroom-eviction-marker.md): ---
-- 2026-10-25 · [Two agents can both claim a task and only one claim survives](notes/2026-10-25-shared-agent-memory-lost-claims.md): ---
-- 2026-10-25 · [Pydantic AI's tool_calls_limit counts successes, not attempts](notes/2026-10-25-pydantic-ai-tool-limits.md): ---
-- 2026-10-25 · [Ollama's Python client treats a cut-off stream as a normal ending](notes/2026-10-25-ollama-stream-eof.md): ---
+- 2026-11-01 · [Sticky fallback preparation is not one-to-one with model calls](notes/2026-11-01-pydantic-ai-fallback-prepare.md): I tested `ModelFallback` in Pydantic AI 2.64.0 on 16 synthetic cases and 112 checks. 108 passed. All 16 checks each for call order,...
+- 2026-11-01 · [A green conformance run can contain a real violation](notes/2026-11-01-mcp-groundtruth-green-run.md): I tested MCP-groundtruth 0.3.0 on synthetic servers. The tool separates two jobs that are easy to confuse: checking its own known-answer...
+- 2026-11-01 · [A compression cache can outlive its recovery data](notes/2026-11-01-headroom-eviction-marker.md): I tested Headroom 0.42.0 through its public Python `compress` call and direct retrieval from its CCR store, the place it keeps originals...
+- 2026-10-25 · [Two agents can both claim a task and only one claim survives](notes/2026-10-25-shared-agent-memory-lost-claims.md): I tested shared-agent-memory 0.7.0 (commit `29e96c663a43da557c25132c4d569bce9d9e6b12`) with invented data, checked on 2026-10-24.
+- 2026-10-25 · [Pydantic AI's tool_calls_limit counts successes, not attempts](notes/2026-10-25-pydantic-ai-tool-limits.md): I tested pydantic-ai-slim 2.59.0 on 2026-10-24 with a 28-assertion fixture. FunctionModel drove the real agent loop with a scripted...
+- 2026-10-25 · [Ollama's Python client treats a cut-off stream as a normal ending](notes/2026-10-25-ollama-stream-eof.md): I tested ollama-python 0.6.3 (httpx 0.28.1, Pydantic 2.14.1) on 2026-10-21. The real SDK ran against an injected httpx MockTransport, so...

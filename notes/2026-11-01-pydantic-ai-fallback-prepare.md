@@ -15,14 +15,7 @@ If a hook counts preparations as provider calls, its count runs high. Keep routi
 
 ## Reproduce
 
-From the fixture folder:
-
-```sh
-sh ../20261101-repo-context/setup.sh
-PYDANTIC_AI_NO_BANNER=1 ../20261101-repo-context/.venv-new/bin/python tryout.py
-```
-
-The fixture files are not published with this note yet.
+The fixture for this note is not public yet. It will be added to [agent-claims](https://github.com/maxmorrish/agent-claims) with a rerun command, and this section will link to it.
 
 ## Not verified
 

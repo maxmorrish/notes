@@ -6,16 +6,18 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 HEAD = """# Notes
 
-Short write-ups of things I tested in AI tooling, each with the command to reproduce it. Most take ten minutes to
-read and say plainly what held and what did not.
+Short write-ups of things I tested in AI tooling. Each says where its evidence is, with a rerun command where
+the fixture is public. They say plainly what held and what did not.
 
 """
 
 
 def meta(path):
     text = path.read_text()
+    if text.startswith("---\n"):
+        text = text.split("\n---\n", 1)[-1]
     title = next((l[2:].strip() for l in text.splitlines() if l.startswith("# ")), path.stem)
-    body = [l.strip() for l in text.splitlines() if l.strip() and not l.startswith("#")]
+    body = [l.strip() for l in text.splitlines() if l.strip() and not l.startswith(("#", "```", "- "))]
     summary = re.sub(r"\s+", " ", body[0]) if body else ""
     if len(summary) > 140:
         summary = summary[:137].rsplit(" ", 1)[0] + "..."
